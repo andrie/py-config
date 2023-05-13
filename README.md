@@ -8,8 +8,17 @@ documentation.
 
 ## Install
 
+The package is not yet available on PyPI, but you can install it from
+GitHub:
+
 ``` sh
-pip install py_config
+pip install git+https://github.com/andrie/py-config
+```
+
+Tip: add this to your `requirements.txt` file:
+
+``` sh
+py-config @ git+https://github.com/andrie/py-config
 ```
 
 ## How to use
