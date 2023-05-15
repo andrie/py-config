@@ -16,20 +16,15 @@ def get_env(
     "Get a value from the environment variables."
     return os.environ.get(var, "default")
 
-assert get_env('TEST') == 'default'
-os.environ['TEST'] = 'test'
-assert get_env('TEST') == 'test'
 
-
-
-# %% ../nbs/00_core.ipynb 5
+# %% ../nbs/00_core.ipynb 6
 def config_get(
-        value: str,
-        py_config_active:str = None,
-        file:str = 'config.yaml',
+        value: str = None, # Name of value (None to read all values)
+        py_config_active:str = None, # Name of configuration to read from. Defaults to the value of the R_CONFIG_ACTIVE environment variable ("default" if the variable does not exist).
+        file:str = 'config.yaml', # Configuration file to read from (defaults to "config.yml"). If the file isn't found at the location specified then parent directories are searched for a file of the same name.
         encoding:str = 'utf-8'
     ):
-    "Get a value from the config.yaml file."
+    "Get a value from the `config.yaml` file.Read from the currently active configuration, retrieving either a single named value or all values as a list."
     if py_config_active is None:
         py_config_active = get_env('R_CONFIG_ACTIVE', 'default')
     
@@ -38,6 +33,9 @@ def config_get(
 
     with open(file, 'r') as stream:
         conf = yaml.safe_load(stream)
-    return conf[py_config_active][value]
-
+    
+    if value is None:
+        return conf[py_config_active]
+    else:
+        return conf[py_config_active][value]
 
