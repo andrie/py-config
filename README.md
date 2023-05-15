@@ -38,7 +38,7 @@ production:
   dataset: "data.csv"
 ```
 
-Read the config file:
+You can read the config file:
 
 ``` python
 import config.core as config
