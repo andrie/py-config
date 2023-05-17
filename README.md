@@ -19,7 +19,7 @@ pip install git+https://github.com/andrie/py-config
 Tip: add this to your `requirements.txt` file:
 
 ``` sh
-py-config @ git+https://github.com/andrie/py-config
+config @ git+https://github.com/andrie/py-config
 ```
 
 And then use `pip install -r requirements.txt` to install the package.

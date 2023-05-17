@@ -5,3 +5,4 @@ notebook
 pre-commit
 quarto
 pyyaml
+shiny

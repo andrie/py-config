@@ -7,6 +7,8 @@ __all__ = ['config_get']
 import yaml
 import os
 import pathlib
+import inspect
+import traceback
 
 # %% ../nbs/00_core.ipynb 4
 def get_env(
@@ -28,8 +30,32 @@ def config_get(
     if py_config_active is None:
         py_config_active = get_env('R_CONFIG_ACTIVE', 'default')
     
+    sources = {
+        inspect.stack()[0][1],
+        os.path.dirname(traceback.extract_stack()[-2].filename),
+        os.getcwd(),
+        os.path.abspath(""),
+    }
+
+    file_exists = False
+    for source in sources:
+        filename = pathlib.Path(source, file)
+        if os.path.exists(filename):
+            file_exists = True
+            # print(f"Found file {file} with source {source}")
+            break
+
+        else:
+            # print(f"File {file} not found with source {source}")
+            pass
+
+    if not file_exists:
+        source_locs = '\n - '.join(sources)
+        raise FileNotFoundError(f"File {file} not found in any of these locations: \n - {source_locs}")
+
+
     dir_path = os.getcwd()
-    file = pathlib.Path(dir_path, file)
+    file = pathlib.Path(dir_path, filename)
 
     with open(file, 'r') as stream:
         conf = yaml.safe_load(stream)
