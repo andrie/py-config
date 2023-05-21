@@ -6,4 +6,7 @@ d = { 'settings': { 'branch': 'main',
                 'git_url': 'https://github.com/andrie/py-config',
                 'lib_path': 'config'},
   'syms': { 'config.core': { 'config.core.config_get': ('core.html#config_get', 'config/core.py'),
-                             'config.core.get_env': ('core.html#get_env', 'config/core.py')}}}
+                             'config.core.expr_constructor': ('core.html#expr_constructor', 'config/core.py'),
+                             'config.core.find_config_file': ('core.html#find_config_file', 'config/core.py'),
+                             'config.core.get_env': ('core.html#get_env', 'config/core.py'),
+                             'config.core.read_yaml': ('core.html#read_yaml', 'config/core.py')}}}
