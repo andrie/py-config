@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "source\n\nconfig_get\n\n config_get (value:str=None, py_config_active:str=None,\n             file:str='config.yaml', encoding:str=None)\n\nGet a value from the config.yaml file.Read from the currently active configuration, retrieving either a single named value or all values as a list.\n\n\n\n\n\n\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nvalue\nstr\nNone\nName of value (None to read all values)\n\n\npy_config_active\nstr\nNone\nName of configuration to read from. Defaults to the value of the R_CONFIG_ACTIVE environment variable (“default” if the variable does not exist).\n\n\nfile\nstr\nconfig.yaml\nConfiguration file to read from.\n\n\nencoding\nstr\nNone\n\n\n\n\n\nassert config_get('trials') == 5\nassert config_get('trials', 'production') == 30\n\n\nconfig_get(py_config_active = \"production\")"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "config",
+    "section": "",
+    "text": "The config package makes it easy to manage environment specific configuration values. For example, you might want to use distinct values for development, testing, and production environments."
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "config",
+    "section": "Installation",
+    "text": "Installation\nThe package is not yet available on PyPI, but you can install it from GitHub:\npip install git+https://github.com/andrie/py-config\nTip: add this to your requirements.txt file:\nconfig @ git+https://github.com/andrie/py-config\nAnd then use pip install -r requirements.txt to install the package."
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "config",
+    "section": "How to use",
+    "text": "How to use\nGiven this config.yaml file:\ndefault:\n  trials: 5\n  dataset: \"data-sampled.csv\"\n  \nproduction:\n  trials: 30\n  dataset: \"data.csv\"\nYou can read the config file:\n\nimport config.core as config\n\n\nconfig.config_get('trials')\n\n5\n\n\n\nconfig.config_get('trials', 'production')\n\n30"
+  }
+]
