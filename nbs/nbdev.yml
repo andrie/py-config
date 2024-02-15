@@ -1,9 +1,0 @@
-project:
-  output-dir: _docs
-
-website:
-  title: "config"
-  site-url: "https://andrie.github.io/py-config"
-  description: "config package for python"
-  repo-branch: main
-  repo-url: "https://github.com/andrie/py-config"
