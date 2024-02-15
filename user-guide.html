@@ -80,17 +80,28 @@
              
   <section id="user-guide">
 <h1>User Guide<a class="headerlink" href="#user-guide" title="Link to this heading"></a></h1>
-<p>This section provides a high-level walk through of building a Python packge using the <code class="docutils literal notranslate"><span class="pre">config</span></code> template. For a much more detailed example see <a class="reference external" href="https://py-pkgs.org/03-how-to-package-a-python"><strong>Python Packages Chapter 3: How to package a Python</strong></a>.</p>
-<ol class="arabic">
-<li><p>Install the dev version of  <a class="reference external" href="https://config.readthedocs.io/en/1.7.2/"><code class="docutils literal notranslate"><span class="pre">config</span></code></a> using <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
-<p><strong>Pip</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/andrie/py-config</span>
-</pre></div></div></li>
-</ol>
+<p>Given this <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">default</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">trials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">  </span><span class="nt">dataset</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data-sampled.csv&quot;</span>
+<span class="w">  </span>
+<span class="nt">production</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">trials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
+<span class="w">  </span><span class="nt">dataset</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;data.csv&quot;</span>
+</pre></div>
+</div>
+<p>You can read the config file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">config.core</span> <span class="k">as</span> <span class="nn">config</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">config_get</span><span class="p">(</span><span class="s1">&#39;trials&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>5</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">config_get</span><span class="p">(</span><span class="s1">&#39;trials&#39;</span><span class="p">,</span> <span class="s1">&#39;production&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>30</p>
 </section>
 
 

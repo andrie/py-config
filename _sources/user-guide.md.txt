@@ -1,13 +1,32 @@
 # User Guide
 
-This section provides a high-level walk through of building a Python packge using the `config` template. For a much more detailed example see [**Python Packages Chapter 3: How to package a Python**](https://py-pkgs.org/03-how-to-package-a-python).
+Given this `config.yaml` file:
 
-1. Install the dev version of  [`config`](https://config.readthedocs.io/en/1.7.2/) using `pip` or `conda`:
+``` yaml
+default:
+  trials: 5
+  dataset: "data-sampled.csv"
+  
+production:
+  trials: 30
+  dataset: "data.csv"
+```
 
-    **Pip**
+You can read the config file:
 
-    ```{prompt} bash
-    pip install git+https://github.com/andrie/py-config
-    ```
+``` python
+import config.core as config
+```
 
+``` python
+config.config_get('trials')
+```
+
+5
+
+``` python
+config.config_get('trials', 'production')
+```
+
+30
 
