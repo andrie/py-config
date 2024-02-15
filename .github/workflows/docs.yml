@@ -22,7 +22,6 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install sphinx sphinx_rtd_theme
           pip install -r docs/requirements.txt
 
       - name: Build Sphinx
@@ -34,4 +33,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/_build/html  # Replace with your Sphinx build directory if different
+          publish_dir: ./docs/_build/html  # Replace with your Sphinx build directory if different
