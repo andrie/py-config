@@ -1,0 +1,42 @@
+project:
+  type: website
+  # render:
+  #   - "reference/*.qmd"
+    # - "!docs/*"
+  preview: 
+    port: 4096
+    browser: false
+
+website:
+  title: "py-config"
+  navbar:
+    pinned: true
+    left:
+      - text: "Home"
+        file: index.qmd
+      - reference/index.qmd
+    right:
+      - icon: github
+        href: https://github.com/andrie/py-config
+        aria-label: py-config on GitHub
+
+
+# tell quarto to read the generated sidebar
+metadata-files:
+  - _sidebar.yml
+
+
+quartodoc:
+  # the name used to import the package you want to create reference docs for
+  package: config
+  title: Reference
+
+  sections:
+    - title: Config
+      desc: Functions to manage your configuration.
+      contents:
+        # the functions being documented in the package.
+        # you can refer to anything: class methods, modules, etc..
+        - config_get
+
+
