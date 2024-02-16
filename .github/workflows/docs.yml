@@ -24,6 +24,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install quartodoc
+          python -m pip install -e .
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
