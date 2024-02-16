@@ -1,3 +1,7 @@
+---
+jupyter: python3
+---
+
 # User Guide
 
 Given this `config.yaml` file:
@@ -14,19 +18,18 @@ production:
 
 You can read the config file:
 
-``` python
+```{python}
 import config.core as config
 ```
 
-``` python
+```{python}
 config.config_get('trials')
 ```
 
-5
 
-``` python
+
+```{python}
 config.config_get('trials', 'production')
 ```
 
-30
 

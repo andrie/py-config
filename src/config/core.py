@@ -94,7 +94,22 @@ def config_get(
         file:str = 'config.yaml', # Configuration file to read from.
         encoding:str = None
     ):
-    "Get a value from the `config.yaml` file.Read from the currently active configuration, retrieving either a single named value or all values as a list."
+    """Get a value from the `config.yaml` file.
+
+    Read from the currently active configuration, retrieving either a single named value or all values as a list.
+    
+    Parameters
+    ----------
+    value: str, optional
+        Name of value (None to read all values)
+    py_config_active: str, optional
+        Name of configuration to read from. Defaults to the value of the `R_CONFIG_ACTIVE` environment variable ("default" if the variable does not exist).
+    file: str
+        Configuration file to read from.
+    encoding: str
+        Encoding to use when reading the file. Defaults to "utf-8".
+    
+    """
     if py_config_active is None:
         py_config_active = get_env('R_CONFIG_ACTIVE', 'default')
     

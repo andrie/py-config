@@ -1,0 +1,9 @@
+# Reference {.doc .doc-index}
+
+## Config
+
+Functions to manage your configuration.
+
+| | |
+| --- | --- |
+| [config_get](config_get.qmd#config.config_get) | Get a value from the `config.yaml` file. |

@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Deploy Docs
 on:
   push:
     branches:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  build-and-deploy:
+  build-docs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,15 +22,19 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r docs/requirements.txt
+          pip install -r requirements.txt
+          pip install quartodoc
 
-      - name: Build Sphinx
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Build docs
         run: |
-          make html  # Replace with your build command if different
-        working-directory: docs
+          make docs
+
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/_build/html  # Replace with your Sphinx build directory if different
+          publish_dir: ./docs/_site  # the quarto site directory

@@ -1,0 +1,54 @@
+---
+jupyter: python3
+---
+
+# config <a href="https://andrie.github.io/py-config/"><img src="_static/logo.png" align="right" height="138" /></a>
+
+
+The `config` package makes it easy to manage environment specific
+configuration values. For example, you might want to use distinct values
+for development, testing, and production environments.
+
+## Installation
+
+The package is not yet available on PyPI, but you can install it from GitHub:
+
+``` sh
+pip install git+https://github.com/andrie/py-config
+```
+
+Tip: add this to your `requirements.txt` file:
+
+``` sh
+config @ git+https://github.com/andrie/py-config
+```
+
+And then use `pip install -r requirements.txt` to install the package.
+
+## How to use
+
+Given this `config.yaml` file:
+
+``` yaml
+default:
+  trials: 5
+  dataset: "data-sampled.csv"
+  
+production:
+  trials: 30
+  dataset: "data.csv"
+```
+
+You can read the config file:
+
+```{python}
+import config
+```
+
+```{python}
+config.config_get('trials')
+```
+
+```{python}
+config.config_get('trials', 'production')
+```

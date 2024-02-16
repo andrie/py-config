@@ -1,3 +1,7 @@
+---
+jupyter: python3
+---
+
 # Quick Start
 
 ## Usage

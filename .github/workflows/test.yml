@@ -1,4 +1,4 @@
-name: test
+name: Run pytest
 
 on:
   # Trigger the workflow on push or pull request on main branch
