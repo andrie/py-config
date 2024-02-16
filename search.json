@@ -1,0 +1,109 @@
+[
+  {
+    "objectID": "quickstart.html",
+    "href": "quickstart.html",
+    "title": "Quick Start",
+    "section": "",
+    "text": "zzwrppohy stubs/quickstart-stub.md"
+  },
+  {
+    "objectID": "quickstart.html#usage",
+    "href": "quickstart.html#usage",
+    "title": "Quick Start",
+    "section": "",
+    "text": "zzwrppohy stubs/quickstart-stub.md"
+  },
+  {
+    "objectID": "quickstart.html#features",
+    "href": "quickstart.html#features",
+    "title": "Quick Start",
+    "section": "Features",
+    "text": "Features\nzzwrppohy stubs/features-stub.md"
+  },
+  {
+    "objectID": "stubs/quickstart-stub.html",
+    "href": "stubs/quickstart-stub.html",
+    "title": "py-config",
+    "section": "",
+    "text": "Installation\nThe package is not yet available on PyPI, but you can install it from GitHub:\npip install git+https://github.com/andrie/py-config\nTip: add this to your requirements.txt file:\nconfig @ git+https://github.com/andrie/py-config\nAnd then use pip install -r requirements.txt to install the package."
+  },
+  {
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Reference",
+    "section": "",
+    "text": "Functions to manage your configuration.\n\n\n\nconfig_get\nGet a value from the config.yaml file.",
+    "crumbs": [
+      "Reference"
+    ]
+  },
+  {
+    "objectID": "reference/index.html#config",
+    "href": "reference/index.html#config",
+    "title": "Reference",
+    "section": "",
+    "text": "Functions to manage your configuration.\n\n\n\nconfig_get\nGet a value from the config.yaml file.",
+    "crumbs": [
+      "Reference"
+    ]
+  },
+  {
+    "objectID": "user-guide.html",
+    "href": "user-guide.html",
+    "title": "User Guide",
+    "section": "",
+    "text": "Given this config.yaml file:\ndefault:\n  trials: 5\n  dataset: \"data-sampled.csv\"\n  \nproduction:\n  trials: 30\n  dataset: \"data.csv\"\nYou can read the config file:\n\nimport config.core as config\n\n\nconfig.config_get('trials')\n\n5\n\n\n\nconfig.config_get('trials', 'production')\n\n30"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "config ",
+    "section": "",
+    "text": "The config package makes it easy to manage environment specific configuration values. For example, you might want to use distinct values for development, testing, and production environments."
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "config ",
+    "section": "Installation",
+    "text": "Installation\nThe package is not yet available on PyPI, but you can install it from GitHub:\npip install git+https://github.com/andrie/py-config\nTip: add this to your requirements.txt file:\nconfig @ git+https://github.com/andrie/py-config\nAnd then use pip install -r requirements.txt to install the package."
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "config ",
+    "section": "How to use",
+    "text": "How to use\nGiven this config.yaml file:\ndefault:\n  trials: 5\n  dataset: \"data-sampled.csv\"\n  \nproduction:\n  trials: 30\n  dataset: \"data.csv\"\nYou can read the config file:\n\nimport config\n\n\nconfig.config_get('trials')\n\n5\n\n\n\nconfig.config_get('trials', 'production')\n\n30"
+  },
+  {
+    "objectID": "reference/config_get.html",
+    "href": "reference/config_get.html",
+    "title": "config_get",
+    "section": "",
+    "text": "config_get(value=None, py_config_active=None, file='config.yaml', encoding=None)\nGet a value from the config.yaml file.\nRead from the currently active configuration, retrieving either a single named value or all values as a list.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nvalue\nstr\nName of value (None to read all values)\nNone\n\n\npy_config_active\nstr\nName of configuration to read from. Defaults to the value of the R_CONFIG_ACTIVE environment variable (“default” if the variable does not exist).\nNone\n\n\nfile\nstr\nConfiguration file to read from.\n'config.yaml'\n\n\nencoding\nstr\nEncoding to use when reading the file. Defaults to “utf-8”.\nNone",
+    "crumbs": [
+      "Reference",
+      "Config",
+      "config_get"
+    ]
+  },
+  {
+    "objectID": "reference/config_get.html#parameters",
+    "href": "reference/config_get.html#parameters",
+    "title": "config_get",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nvalue\nstr\nName of value (None to read all values)\nNone\n\n\npy_config_active\nstr\nName of configuration to read from. Defaults to the value of the R_CONFIG_ACTIVE environment variable (“default” if the variable does not exist).\nNone\n\n\nfile\nstr\nConfiguration file to read from.\n'config.yaml'\n\n\nencoding\nstr\nEncoding to use when reading the file. Defaults to “utf-8”.\nNone",
+    "crumbs": [
+      "Reference",
+      "Config",
+      "config_get"
+    ]
+  },
+  {
+    "objectID": "stubs/features-stub.html",
+    "href": "stubs/features-stub.html",
+    "title": "py-config",
+    "section": "",
+    "text": "config includes the following core features:\n\nget_config() to read a configuration yaml file"
+  }
+]
